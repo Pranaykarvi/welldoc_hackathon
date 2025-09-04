@@ -1,0 +1,26 @@
+{
+  "name": "cohort-compass",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "next build",
+    "start": "next start",
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.1.3",
+    "next": "^14.2.5",
+    "papaparse": "^5.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7",
+    "tw-animate-css": "^1.0.0",        
+    "zustand": "^4.3.6",               
+    "tailwind-merge": "^1.14.0"        
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "@types/react": "^18.0.37",
+    "@types/node": "^20.4.1"
+  }
+}
