@@ -1,12 +1,18 @@
 "use client"
 
 import type React from "react"
-
 import { useCallback, useState } from "react"
 import Papa from "papaparse"
 import { Button } from "@/components/ui/button"
 import { usePatientStore } from "@/lib/store"
 import { type CsvRow, toPatientFromPrediction } from "@/lib/data"
+
+// Type for the PapaParse result
+interface PapaParseResult {
+  data: CsvRow[]; // Define the structure of the parsed data here
+  errors: any[]; // Optionally define error structure if needed
+  meta: any; // The metadata (headers, etc.) returned by the parse
+}
 
 export function UploadCsv() {
   const [rows, setRows] = useState<CsvRow[]>([])
@@ -26,11 +32,11 @@ export function UploadCsv() {
     Papa.parse(file, {
       header: true,
       skipEmptyLines: true,
-      complete: (result) => {
-        const data = (result.data as any[]).map(cleanRow).filter(Boolean) as CsvRow[]
+      complete: (result: PapaParseResult) => { // Now properly typing the result
+        const data = result.data.map(cleanRow).filter(Boolean) as CsvRow[] // Clean and type the data
         setRows(data)
       },
-      error: (err) => {
+      error: (err: any) => { // Typing error as any
         console.error("[v0] CSV parse error:", err.message)
       },
     })
