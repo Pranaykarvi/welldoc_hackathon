@@ -39,7 +39,7 @@ export default function LandingPage() {
         </div>
 
         <div className="mt-12 rounded-2xl bg-gray-900 p-4 shadow-md">
-          <img src="/dark-mode-clinician-dashboard-with-charts-and-tabl.png" alt="Cohort Compass dashboard preview" className="rounded-xl w-full" />
+          <img src="public/digital-doctor-healthcare-science-medical-600nw-2267168307.png" alt="Cohort Compass dashboard preview" className="rounded-xl w-full" />
         </div>
       </section>
 
